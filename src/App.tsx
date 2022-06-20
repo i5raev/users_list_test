@@ -12,7 +12,7 @@ const UserAddPage = lazy(() => import('./pages/userAddPage'));
 
 const App = () => {
     return (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <Suspense fallback={<LoadingSpinner/>}>
                 <Switch>
                     <Route exact path='/' component={HomePage}/>
