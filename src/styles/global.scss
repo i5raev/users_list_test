@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Barlow', sans-serif;
+}
+
+body{
+  background: #ffffff;
+}
+
+.container{
+  max-width: 700px !important;
+  margin: 10% auto;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input{
+  outline: none;
+  :focus {
+    outline: 0;
+  }
+}
+
+button{
+  cursor: pointer;
+}
+
+img,h1,h2,h3,h4,h5{
+  margin: 0;
+  padding: 0;
+}

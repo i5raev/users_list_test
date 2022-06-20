@@ -1,0 +1,12 @@
+.header{
+  width: 100%;
+  background: #c1c1c1;
+  border-radius: 5px 5px 0 0 ;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & h1{
+    font-size: 30px;
+  }
+}

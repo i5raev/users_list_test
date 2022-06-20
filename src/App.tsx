@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {lazy,Suspense} from 'react'
+import {
+    BrowserRouter as Router, Route,
+    Switch
+} from "react-router-dom";
+import {LoadingSpinner} from "./components";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const HomePage = lazy(() => import('./pages/homePage'));
+const UserDetailPage = lazy(() => import('./pages/userDetailPage'));
+const UserEditPage = lazy(() => import('./pages/userEditPage'));
+const UserAddPage = lazy(() => import('./pages/userAddPage'));
+
+const App = () => {
+    return (
+        <Router>
+            <Suspense fallback={<LoadingSpinner/>}>
+                <Switch>
+                    <Route exact path='/' component={HomePage}/>
+                    <Route exact path='/users/:id' component={UserDetailPage}/>
+                    <Route exact path='/add' component={UserAddPage}/>
+                    <Route exact path='/edit/:id' component={UserEditPage}/>
+                </Switch>
+            </Suspense>
+
+        </Router>
+    );
 }
 
 export default App;
